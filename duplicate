@@ -1,0 +1,42 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class Main {
+    public static void main(String[] args) {
+
+        String input = "ALL well well thats well ALL is all when I am well and all";
+        String[] words = input.split(" ");
+
+        boolean[] duplicate = new boolean[words.length];
+
+        // Step 1: find duplicates
+        for (int i = 0; i < words.length; i++) {
+            for (int j = i + 1; j < words.length; j++) {
+                if (words[i].equalsIgnoreCase(words[j])) {
+                    duplicate[i] = true;
+                    duplicate[j] = true;
+                }
+            }
+        }
+
+        // Step 2: reverse only duplicates
+        for (int i = 0; i < words.length; i++) {
+            if (duplicate[i]) {
+                words[i] = reverse(words[i]);
+            }
+        }
+
+        // Print output
+        for (String w : words) {
+            System.out.print(w + " ");
+        }
+    }
+
+    public static String reverse(String wrd) {
+        String rev = "";
+        for (int i = wrd.length() - 1; i >= 0; i--) {
+            rev = rev + wrd.charAt(i);
+        }
+        return rev;
+    }
+}
