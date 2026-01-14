@@ -1,0 +1,38 @@
+Encapsulation
+
+Encapsulation is the concept of wrapping data and the methods that operate on that data into a single unit 
+and restricting direct access to the internal state. In Java, this is achieved using private variables and 
+public getter and setter methods. This ensures data security and prevents unintended modification. 
+In Selenium automation, encapsulation is commonly used in the Page Object Model, 
+where web elements are kept private inside a page class and accessed through public methods. 
+This makes the framework more maintainable, readable, and protects the internal page structure 
+from being accessed or modified directly by test scripts.
+
+Inheritance
+
+Inheritance allows a class to acquire properties and methods of another class, 
+enabling code reusability and hierarchical relationships. 
+In Java, this is implemented using the extends keyword. 
+Selenium heavily relies on inheritance in its architecture; for example, ChromeDriver inherits 
+functionality from RemoteWebDriver, which in turn implements the WebDriver interface. 
+This means browser-specific drivers do not need to re-implement common browser operations. 
+In automation frameworks, inheritance is also used when a base test class contains common setup and teardown 
+logic that is reused by multiple test classes.
+
+Polymorphism
+
+Polymorphism allows the same method or object reference to behave differently based on the actual object it refers to. 
+In Selenium, this is widely used through the WebDriver interface. 
+For example, the same WebDriver reference can point to ChromeDriver, 
+FirefoxDriver, or EdgeDriver, and the same test code will work across all browsers. 
+This makes Selenium highly flexible and supports cross-browser testing without changing the test scripts. 
+Polymorphism improves scalability and reduces duplication of code in automation frameworks.
+
+Abstraction
+
+Abstraction means hiding implementation details and exposing only what is 
+necessary to the user. In Java, abstraction is achieved using interfaces and abstract classes. 
+Selenium uses abstraction by providing the WebDriver interface, which defines what browser operations can be performed, 
+such as clicking, navigating, and finding elements, without exposing how those operations are implemented internally. 
+The actual logic is handled by concrete classes like ChromeDriver or FirefoxDriver. 
+This allows testers to write browser-independent test scripts while Selenium manages the complexity behind the scenes.
