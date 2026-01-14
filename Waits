@@ -1,0 +1,18 @@
+explicit wait: 
+
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); 
+WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btn"))); 
+
+
+Impicit wait:
+
+driver.manage().timeouts().implicityWait(Duration.ofSeconds(10));
+
+
+Fluent wait: 
+
+Wait<WebDriver> wait = new FluentWait<>(driver). 
+.withTimeout(Duration.ofSeconds(10))
+.pollingEvery(Duration.ofSeconds(2))
+.ignoring(NoSuchElementException.class);
+WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btn")));
